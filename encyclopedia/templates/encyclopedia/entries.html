@@ -1,0 +1,23 @@
+{% extends "encyclopedia/index.html" %}
+
+
+{% block title %}
+    entries
+{% endblock %}
+
+{% block body %}
+
+    {{content}}
+
+
+{% endblock %}
+
+{% block nav %}
+
+    <div class="div-edit">
+        <form action="{% url 'encyclopedia:editEntry' %}" method="get">
+            <input class="edit-page" type="submit" value="Edit">
+        </form>
+    </div>
+
+{% endblock %}

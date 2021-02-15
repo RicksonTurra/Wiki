@@ -1,0 +1,32 @@
+{% extends "encyclopedia/index.html" %}
+
+
+
+{% block title %}
+    edit entry
+{% endblock %}
+
+{% block body %}
+
+    {{content}}
+
+
+    <div class="edit-Entry">
+
+        <form action="{% url 'encyclopedia:editEntry' %}" method="post">
+            {% csrf_token %}
+            <label id="labeled" for="type-content">Type in the content: </label>
+            <textarea id="type-content" name="content_data" rows="2" cols="20" style="height:200px"></textarea>
+            <input id="urlAddress" name="{{urlAddress}}" value="{{ urlAddress }}" type="hidden">
+            <input id="matchRe" name="{{matchRe}}" value="{{ matchRe }}" type="hidden">
+            <input class="botao" type="submit" name="botao" value="Add">
+
+
+        </form>
+
+    </div>
+
+
+
+{% endblock %}
+

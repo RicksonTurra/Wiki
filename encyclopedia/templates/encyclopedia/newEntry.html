@@ -1,0 +1,34 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    New Entry
+{% endblock %}
+
+{% block body %}
+
+    <div class="formulario">
+        <form action="{% url 'encyclopedia:add' %}" method="post">
+            {% csrf_token %}
+            <!-- Add new entry: <input class="pageNew" type="text" name="pageN"> -->
+            <div class="nome">
+                {{ NewEntry }}
+            </div>
+            
+            <!-- {{ NewEntryContent }} -->
+            <label id="labeled" for="type-content">Type in the content: </label>
+            <textarea id="type-content" name="content_data" rows="2" cols="20" style="height:200px"></textarea>
+            <input class="botao" type="submit" name="botao" value="Add">
+        <!-- </form>
+    </div>
+
+    <div class="formulario-data">
+        <form action="{% url 'encyclopedia:add' %}" method="post">
+            {% csrf_token %} -->
+            <!-- <label for="type-content">Type in the content: </label>
+            <textarea id="type-content" name="content_data" rows="2" cols="20"></textarea>
+            <input id="botao-content" type="submit" name="botao-content-name" value="Submit Content"> -->
+        </form>
+    </div>
+
+
+{% endblock %}
